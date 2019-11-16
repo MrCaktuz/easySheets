@@ -15,28 +15,28 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('race_id')->references('id')->on('race')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('predilection_class_id')->references('id')->on('character_class')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('alignment_id')->references('id')->on('alignment')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('exploration_id')->references('id')->on('exploration')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('progression_id')->references('id')->on('progression')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('wealth_id')->references('id')->on('wealth')
@@ -45,28 +45,28 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('character_characterClass', function(Blueprint $table) {
 			$table->foreign('class_id')->references('id')->on('character_class')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character_characterClass', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
-		Schema::table('character_lineage', function(Blueprint $table) {
-			$table->foreign('lineage_id')->references('id')->on('lineage')
+		Schema::table('character_bloodline', function(Blueprint $table) {
+			$table->foreign('bloodline_id')->references('id')->on('bloodline')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
-		Schema::table('character_lineage', function(Blueprint $table) {
+		Schema::table('character_bloodline', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
 		Schema::table('character_domaine', function(Blueprint $table) {
 			$table->foreign('domain_id')->references('id')->on('domain')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character_domaine', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
@@ -75,8 +75,8 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('character_school', function(Blueprint $table) {
 			$table->foreign('school_id')->references('id')->on('school')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character_school', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
@@ -85,8 +85,8 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('character_ground', function(Blueprint $table) {
 			$table->foreign('ground_id')->references('id')->on('ground')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character_ground', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
@@ -95,8 +95,8 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('character_language', function(Blueprint $table) {
 			$table->foreign('language_id')->references('id')->on('language')
-						->onDelete('cascade')
-						->onUpdate('cascade');
+						->onDelete('restrict')
+						->onUpdate('restrict');
 		});
 		Schema::table('character_language', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
@@ -213,6 +213,11 @@ class CreateForeignKeys extends Migration {
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
+		Schema::table('martial_skill', function(Blueprint $table) {
+			$table->foreign('character_id')->references('id')->on('character')
+						->onDelete('cascade')
+						->onUpdate('cascade');
+		});
 	}
 
 	public function down()
@@ -244,11 +249,11 @@ class CreateForeignKeys extends Migration {
 		Schema::table('character_characterClass', function(Blueprint $table) {
 			$table->dropForeign('character_characterClass_character_id_foreign');
 		});
-		Schema::table('character_lineage', function(Blueprint $table) {
-			$table->dropForeign('character_lineage_lineage_id_foreign');
+		Schema::table('character_bloodline', function(Blueprint $table) {
+			$table->dropForeign('character_bloodline_bloodline_id_foreign');
 		});
-		Schema::table('character_lineage', function(Blueprint $table) {
-			$table->dropForeign('character_lineage_character_id_foreign');
+		Schema::table('character_bloodline', function(Blueprint $table) {
+			$table->dropForeign('character_bloodline_character_id_foreign');
 		});
 		Schema::table('character_domaine', function(Blueprint $table) {
 			$table->dropForeign('character_domaine_domain_id_foreign');
@@ -339,6 +344,9 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('basic_combat_stat', function(Blueprint $table) {
 			$table->dropForeign('basic_combat_stat_basic_combat_stat_type_id_foreign');
+		});
+		Schema::table('martial_skill', function(Blueprint $table) {
+			$table->dropForeign('martial_skill_character_id_foreign');
 		});
 	}
 }
