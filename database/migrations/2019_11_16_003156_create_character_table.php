@@ -32,7 +32,7 @@ class CreateCharacterTable extends Migration {
 			$table->integer('progression_id')->unsigned();
 			$table->integer('combat_id')->unsigned();
 			$table->decimal('middle_load');
-			$table->decimal('havy_load');
+			$table->decimal('heavy_load');
 			$table->decimal('max_load');
 			$table->integer('wealth_id')->unsigned();
 			$table->timestamps();

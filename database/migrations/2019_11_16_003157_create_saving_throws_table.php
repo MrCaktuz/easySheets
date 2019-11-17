@@ -9,8 +9,8 @@ class CreateSavingThrowsTable extends Migration {
 	{
 		Schema::create('saving_throws', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('saving_throws_type_id')->unsigned();
 			$table->integer('combat_id')->unsigned();
+			$table->integer('saving_throws_type_id')->unsigned();
 		});
 	}
 

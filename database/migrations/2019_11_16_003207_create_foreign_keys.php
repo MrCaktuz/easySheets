@@ -43,12 +43,12 @@ class CreateForeignKeys extends Migration {
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
-		Schema::table('character_characterClass', function(Blueprint $table) {
+		Schema::table('character_character_class', function(Blueprint $table) {
 			$table->foreign('class_id')->references('id')->on('character_class')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
-		Schema::table('character_characterClass', function(Blueprint $table) {
+		Schema::table('character_character_class', function(Blueprint $table) {
 			$table->foreign('character_id')->references('id')->on('character')
 						->onDelete('cascade')
 						->onUpdate('cascade');
@@ -153,11 +153,6 @@ class CreateForeignKeys extends Migration {
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
-		Schema::table('magic_stat', function(Blueprint $table) {
-			$table->foreign('main_attribute_type_id')->references('id')->on('attribute_type')
-						->onDelete('cascade')
-						->onUpdate('cascade');
-		});
 		Schema::table('skill_type', function(Blueprint $table) {
 			$table->foreign('attribute_type_id')->references('id')->on('attribute_type')
 						->onDelete('cascade')
@@ -243,11 +238,11 @@ class CreateForeignKeys extends Migration {
 		Schema::table('character', function(Blueprint $table) {
 			$table->dropForeign('character_wealth_id_foreign');
 		});
-		Schema::table('character_characterClass', function(Blueprint $table) {
-			$table->dropForeign('character_characterClass_class_id_foreign');
+		Schema::table('character_character_class', function(Blueprint $table) {
+			$table->dropForeign('character_character_class_class_id_foreign');
 		});
-		Schema::table('character_characterClass', function(Blueprint $table) {
-			$table->dropForeign('character_characterClass_character_id_foreign');
+		Schema::table('character_character_class', function(Blueprint $table) {
+			$table->dropForeign('character_character_class_character_id_foreign');
 		});
 		Schema::table('character_bloodline', function(Blueprint $table) {
 			$table->dropForeign('character_bloodline_bloodline_id_foreign');

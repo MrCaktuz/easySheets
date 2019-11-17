@@ -12,7 +12,6 @@ class CreateMagicStatTable extends Migration {
 			$table->increments('id');
 			$table->integer('character_id')->unsigned();
 			$table->integer('level')->unsigned();
-			$table->integer('main_attribute_type_id')->unsigned();
 		});
 	}
 

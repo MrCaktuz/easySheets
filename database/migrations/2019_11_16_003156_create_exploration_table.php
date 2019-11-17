@@ -12,7 +12,7 @@ class CreateExplorationTable extends Migration {
 			$table->increments('id');
 			$table->string('walking');
 			$table->string('swimming');
-			$table->string('climb');
+			$table->string('climbing');
 			$table->string('flying');
 			$table->string('night_vision');
 			$table->string('dark-vision');

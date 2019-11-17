@@ -8,14 +8,14 @@ class CreateCharacterCharacterClassTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('character_characterClass', function(Blueprint $table) {
-			$table->integer('class_id')->unique()->unsigned();
+		Schema::create('character_character_class', function(Blueprint $table) {
+			$table->integer('character_class_id')->unique()->unsigned();
 			$table->integer('character_id')->unique()->unsigned();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('character_characterClass');
+		Schema::drop('character_character_class');
 	}
 }

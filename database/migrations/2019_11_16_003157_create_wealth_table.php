@@ -10,10 +10,10 @@ class CreateWealthTable extends Migration {
 		Schema::create('wealth', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('character_id')->unsigned();
-			$table->integer('gold');
 			$table->integer('copper');
-			$table->integer('platinum');
 			$table->integer('silver');
+			$table->integer('gold');
+			$table->integer('platinum');
 		});
 	}
 
