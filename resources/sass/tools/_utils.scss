@@ -1,0 +1,101 @@
+/*
+ *	Description:    Main stylesheet
+ *	File:    		    app.scss
+ *	Version:        1.0 - 17/11/2019
+ *	Author :        Mucht
+*/
+
+@mixin fontSize($sizeValue: 1.6) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+@mixin flexBox(
+    $direction: row,
+    $justityContent: flex-start,
+    $alignItems: flex-start,
+    $wrap: noWrap
+) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justityContent;
+    align-items: $alignItems;
+}
+
+@mixin flexRow(
+    $justityContent: flex-start,
+    $alignItems: flex-start,
+    $wrap: no-wrap
+) {
+    @include flexBox(row, $justityContent, $alignItems, $wrap);
+}
+
+@mixin flexCol(
+    $justityContent: flex-start,
+    $alignItems: flex-start,
+    $wrap: no-wrap
+) {
+    @include flexBox(column, $justityContent, $alignItems, $wrap);
+}
+
+@mixin containerVerticalSpacer() {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@mixin containerLateralSpacer() {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+@mixin containerFullSpacer() {
+    @include containerVerticalSpacer();
+    @include containerLateralSpacer();
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin buttonStyle(
+    $color: $blueDarker,
+    $borderColor: $blueLighter,
+    $backgroundColor: $blueLighter,
+    $colorHover: $blueDarker,
+    $borderColorHover: $white,
+    $backgroundColorHover: $white
+) {
+    padding: 0.5rem 1rem;
+    color: $color;
+    border: 0.1rem;
+    border-style: solid;
+    border-color: $borderColor;
+    border-radius: 0.5rem;
+    background-color: $backgroundColor;
+    transition: $mainTrans;
+    &:hover{
+        color: $colorHover;
+        border-color: $borderColorHover;
+        background-color: $backgroundColorHover;
+    }
+}
+
+@mixin beforeDropdown
+(
+    $right: 1rem,
+    $color: $blueMedium
+) {
+    &::before{
+        content: '';
+        position: absolute;
+        top: -2rem;
+        right: $right;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 1rem solid transparent;
+        border-bottom-color: $color;
+    }
+}

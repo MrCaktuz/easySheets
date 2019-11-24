@@ -1,0 +1,16 @@
+/*
+ *	Description:    stylesheet for object footer
+ *	File:    		_footer.scss
+ *	Version:        1.0 - 23/11/2019
+ *	Author :        Mucht
+*/
+
+.footer {
+	@include containerFullSpacer();
+	@include fontSize(1.2);
+	background-color: $black;
+	&-wrap {
+		@include flexRow(center, center);
+		flex: 0 0 auto;
+	}
+}

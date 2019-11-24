@@ -1,0 +1,56 @@
+/*
+ *	Description:    stylesheet for object Toolbar
+ *	File:    		_toolbar.scss
+ *	Version:        1.0 - 23/11/2019
+ *	Author :        Mucht
+*/
+
+.toolbar{
+	@include containerLateralSpacer();
+	background-color: $blueDarker;
+	&_wrap{
+		@include flexRow(flex-end, center);
+	}
+	&_brand_container{
+		@include flexRow(flex-start, center);
+		flex: 1 0 auto;
+	}
+	&_action_container{
+		flex: 0 0 auto;
+	}
+	&_icon{
+		@include size(5rem);
+		margin: 2rem 0;
+		display: block;
+	}
+	&_button{
+		@include buttonStyle();
+	}
+	&_dropdown{
+		&-container{
+			position: relative;
+			&:hover .toolbar_dropdown-content{
+				display: block;
+			}
+		}
+		&-toggle{
+			display: block;
+			padding: 2rem 0;
+			color: $white;
+			// &-on{}
+			// &-off{}
+		}
+		&-content{
+			// opacity: 0;
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			padding: 1rem;
+			background-color: $blueMedium;
+			box-shadow: $mainShadow;
+			transition: $mainTrans;
+			@include beforeDropdown();
+		}
+	}
+}

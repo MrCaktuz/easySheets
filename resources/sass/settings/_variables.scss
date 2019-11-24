@@ -1,0 +1,40 @@
+/*
+ *	Description:    Global variables
+ *	File:    		_variables.scss
+ *	Version:        1.0 - 06/05/2017
+ *	Author :        Mucht - claessens.mathieu@gmail.com
+*/
+
+// Colors
+$blueDarker: #0A1826;
+$blueDark: #1E3A4C;
+$blueMedium: #305973;
+$blueLight: #46778C;
+$blueLighter: #82C9D9;
+
+$orange: #DC6C11;
+$black: #101010;
+$white: #FFFFFF;
+$red: #FF3333;
+$green: #43ac6a;
+$transparent: rgba($white, 0);
+$grey: #9b9b9b;
+
+// Backgrounds
+$whiteTrans: rgba($white, 0.9);
+$bodyGradient: linear-gradient(to top, $blueDarker, #142738, #1d374b, #27475f, $blueMedium);
+
+// Borders
+$mainBorder: solid 0.1rem $blueDark;
+
+// Shadows
+$mainShadow: 0.1rem 0.2rem 0.5rem 0rem rgba($black, 0.2);
+
+// Transitions
+$mainTrans: all .25s ease-in-out;
+
+// Fonts
+$stackOpenSans: 'Open Sans', sans-serif;
+$stackVollkorn: 'Vollkorn', serif;
+$bold: 600;
+$regular: 400;

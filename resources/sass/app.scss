@@ -1,8 +1,30 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/*
+ *	Description:    Main stylesheet
+ *	File:    		app.scss
+ *	Version:        1.0 - 17/11/2019
+ *	Author :        Mucht
+*/
 
-// Variables
-@import 'variables';
+// 1. Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Vollkorn:400,600&display=swap');
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// 2. Variables
+@import 'settings/variables';
+
+// 3. Tools - Mixins globaux, functions & tools
+@import "tools/utils";
+
+// 4. Generic - Style de remise à zéro (reset, normalize…)
+@import "generic/boxSizing";
+@import "generic/meyerReset";
+@import "generic/screenReader";
+
+// 5. Base - Éléments bruts
+@import "base/root";
+
+// 6. Components - Design des composants
+@import "components/toolbar";
+@import "components/footer";
+
+// 7. Objects - Éléments de design
+@import "objects/svg_logo";
