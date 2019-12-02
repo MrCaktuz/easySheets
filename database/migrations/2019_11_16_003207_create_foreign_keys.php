@@ -14,16 +14,6 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('cascade');
 		});
 		Schema::table('character', function(Blueprint $table) {
-			$table->foreign('race_id')->references('id')->on('race')
-						->onDelete('restrict')
-						->onUpdate('restrict');
-		});
-		Schema::table('character', function(Blueprint $table) {
-			$table->foreign('predilection_class_id')->references('id')->on('character_class')
-						->onDelete('restrict')
-						->onUpdate('restrict');
-		});
-		Schema::table('character', function(Blueprint $table) {
 			$table->foreign('alignment_id')->references('id')->on('alignment')
 						->onDelete('restrict')
 						->onUpdate('restrict');
@@ -44,7 +34,7 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('cascade');
 		});
 		Schema::table('character_character_class', function(Blueprint $table) {
-			$table->foreign('class_id')->references('id')->on('character_class')
+			$table->foreign('character_class_id')->references('id')->on('character_class')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
@@ -219,12 +209,6 @@ class CreateForeignKeys extends Migration {
 	{
 		Schema::table('character', function(Blueprint $table) {
 			$table->dropForeign('character_user_id_foreign');
-		});
-		Schema::table('character', function(Blueprint $table) {
-			$table->dropForeign('character_race_id_foreign');
-		});
-		Schema::table('character', function(Blueprint $table) {
-			$table->dropForeign('character_predilection_class_id_foreign');
 		});
 		Schema::table('character', function(Blueprint $table) {
 			$table->dropForeign('character_alignment_id_foreign');

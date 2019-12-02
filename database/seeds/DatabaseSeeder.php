@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GroundTableSeeder::class);
         $this->call(ItemTypeTableSeeder::class);
         $this->call(LanguageTableSeeder::class);
-        $this->call(RaceTableSeeder::class);
         $this->call(ResistanceTypeTableSeeder::class);
         $this->call(SavingThrowsTypeTableSeeder::class);
         $this->call(SchoolTableSeeder::class);

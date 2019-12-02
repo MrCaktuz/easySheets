@@ -12,8 +12,8 @@ class CreateCharacterTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->string('name');
-			$table->integer('race_id')->unsigned();
-			$table->integer('predilection_class_id')->unsigned();
+			$table->string('race');
+			$table->string('predilection_class');
 			$table->integer('alignment_id')->unsigned();
 			$table->string('religion');
 			$table->float('age');
