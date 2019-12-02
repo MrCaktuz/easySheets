@@ -19,9 +19,12 @@
                     @endif
                 @else
                 <div class="toolbar_dropdown-container">
-                    <a class="toolbar_dropdown-toggle" href="#" role="button">
-                        {{ Auth::user()->name }}
-                    </a>
+                    <div class="toolbar_dropdown-toggle" role="button">
+                        <div class="toolbar_dropdown-toggle-name">{{ Auth::user()->name }}</div>
+                        <div class="toolbar_avatar_container">
+                            <img src="{{Auth::user()->avatar}}" alt="Avatar Image" class="avatar_img">
+                        </div>
+                    </div>
 
                     <div class="toolbar_dropdown-content">
                         <a class="dropdown-item" href="{{ route('logout') }}"

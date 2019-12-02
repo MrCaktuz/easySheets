@@ -1,5 +1,5 @@
 /*
- *	Description:    stylesheet for object Toolbar
+ *	Description:    stylesheet for layouts Toolbar
  *	File:    		_toolbar.scss
  *	Version:        1.0 - 23/11/2019
  *	Author :        Mucht
@@ -34,23 +34,29 @@
 			}
 		}
 		&-toggle{
-			display: block;
+			@include flexRow(flex-end, center);
 			padding: 2rem 0;
 			color: $white;
-			// &-on{}
-			// &-off{}
+			&-name{
+				margin-right: 1rem;
+			}
 		}
 		&-content{
-			// opacity: 0;
-			display: none;
-			position: absolute;
-			top: 100%;
-			right: 0;
-			padding: 1rem;
+			@include dropdown();
+		}
+	}
+	&_avatar{
+		&_container{
+			@include size(5rem);
+			@include flexRow(center, center);
+			flex: 0 0 auto;
+			border: 0.1rem solid $blueLighter;
+			border-radius: 50%;
 			background-color: $blueMedium;
-			box-shadow: $mainShadow;
-			transition: $mainTrans;
-			@include beforeDropdown();
+			overflow: hidden;
+		}
+		&_img{
+			@include size(100%);
 		}
 	}
 }

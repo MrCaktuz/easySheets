@@ -1,5 +1,5 @@
 /*
- *	Description:    stylesheet for object footer
+ *	Description:    stylesheet for layouts footer
  *	File:    		_footer.scss
  *	Version:        1.0 - 23/11/2019
  *	Author :        Mucht
@@ -8,7 +8,7 @@
 .footer {
 	@include containerFullSpacer();
 	@include fontSize(1.2);
-	background-color: $black;
+	background-color: $blueDarker;
 	&-wrap {
 		@include flexRow(center, center);
 		flex: 0 0 auto;

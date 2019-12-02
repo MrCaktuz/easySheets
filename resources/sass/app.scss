@@ -22,9 +22,12 @@
 // 5. Base - Éléments bruts
 @import "base/root";
 
-// 6. Components - Design des composants
-@import "components/toolbar";
-@import "components/footer";
+// 6. Layouts - Design des layouts
+@import "layouts/toolbar";
+@import "layouts/footer";
 
-// 7. Objects - Éléments de design
+// 7. Components - Design des composants
+// @import "components/example";
+
+// 8. Objects - Éléments de design
 @import "objects/svg_logo";

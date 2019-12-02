@@ -5,16 +5,32 @@
  *	Author :        Mucht
 */
 
-@mixin fontSize($sizeValue: 1.6) {
+@mixin fontSize(
+    $sizeValue: 1.6,
+) {
     font-size: ($sizeValue * 10) + px;
     font-size: $sizeValue + rem;
+}
+
+@mixin text(
+    $fontSize: 1.6,
+    $fontWeight: normal,
+    $color: $white,
+    $transform: "",
+    $decoration: "",
+) {
+    @include fontSize($fontSize);
+    font-weight: $fontWeight;
+    color: $color;
+    text-transform: $transform;
+    text-decoration: $decoration;
 }
 
 @mixin flexBox(
     $direction: row,
     $justityContent: flex-start,
     $alignItems: flex-start,
-    $wrap: noWrap
+    $wrap: noWrap,
 ) {
     display: flex;
     flex-direction: $direction;
@@ -26,7 +42,7 @@
 @mixin flexRow(
     $justityContent: flex-start,
     $alignItems: flex-start,
-    $wrap: no-wrap
+    $wrap: no-wrap,
 ) {
     @include flexBox(row, $justityContent, $alignItems, $wrap);
 }
@@ -34,7 +50,7 @@
 @mixin flexCol(
     $justityContent: flex-start,
     $alignItems: flex-start,
-    $wrap: no-wrap
+    $wrap: no-wrap,
 ) {
     @include flexBox(column, $justityContent, $alignItems, $wrap);
 }
@@ -54,7 +70,10 @@
     @include containerLateralSpacer();
 }
 
-@mixin size($width, $height: $width) {
+@mixin size(
+    $width,
+    $height: $width,
+) {
     width: $width;
     height: $height;
 }
@@ -65,7 +84,7 @@
     $backgroundColor: $blueLighter,
     $colorHover: $blueDarker,
     $borderColorHover: $white,
-    $backgroundColorHover: $white
+    $backgroundColorHover: $white,
 ) {
     padding: 0.5rem 1rem;
     color: $color;
@@ -82,10 +101,9 @@
     }
 }
 
-@mixin beforeDropdown
-(
-    $right: 1rem,
-    $color: $blueMedium
+@mixin beforeDropdown (
+    $color: $blueDark,
+    $right: 1.5rem,
 ) {
     &::before{
         content: '';
@@ -98,4 +116,18 @@
         border: 1rem solid transparent;
         border-bottom-color: $color;
     }
+}
+
+@mixin dropdown (
+    $backgroundColor: $blueDark,
+) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem;
+    background-color: $backgroundColor;
+    box-shadow: $mainShadow;
+    transition: $mainTrans;
+    @include beforeDropdown($backgroundColor);
 }
