@@ -1,0 +1,29 @@
+/*
+ *	Description:    stylesheet for layouts Toolbar
+ *	File:    		_toolbar.scss
+ *	Version:        1.0 - 23/11/2019
+ *	Author :        Mucht
+*/
+
+.login{
+	&_container{
+		@include flexCol(flex-start, center);
+	}
+	&_form{
+		@include flexCol(flex-start, flex-start);
+		@include box();
+		width: 100%;
+		max-width: 45rem;
+		background-color: $blueDarker;
+	}
+	&_forgotPassword{
+		@include fontSize($fontSizeSmall);
+	}
+	&_action{
+		&_container{
+			@include flexRow(flex-end, flex-end);
+			width: 100%;
+			margin-top: 1rem;
+		}
+	}
+}

@@ -16,6 +16,10 @@ return [
     'login' => "Login",
     'register' => "register",
     'logout' => "Logout",
+    'email' => "E-mail",
+    'password' => "Password",
+    'remember' => "Remember me",
+    'forgotPassword' => 'Forgot your password ?',
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 

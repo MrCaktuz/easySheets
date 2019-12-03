@@ -7,7 +7,7 @@
 
 .footer {
 	@include containerFullSpacer();
-	@include fontSize(1.2);
+	@include fontSize($fontSizeTiny);
 	background-color: $blueDarker;
 	&-wrap {
 		@include flexRow(center, center);

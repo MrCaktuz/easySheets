@@ -11,7 +11,7 @@ html{
 }
 
 body{
-    @include fontSize(1.6);
+    @include fontSize($fontSizeNormal);
     background-color: $blueDark;
     background-image: $bodyGradient;
     color: $white;
@@ -19,6 +19,23 @@ body{
 
 h1, h2, h3, h4, h5, h6{
     font-family: $stackVollkorn;
+}
+h1{
+    @include fontSize($fontSizeBigger);
+    margin-bottom: $fontSizeBigger + rem;
+}
+h2{
+    @include fontSize($fontSizeBig);
+    margin-bottom: $fontSizeBig + rem;
+}
+h3{
+    @include fontSize($fontSizeMedium);
+    margin-bottom: $fontSizeMedium + rem;
+}
+h4{
+    @include fontSize($fontSizeNormal);
+    margin-bottom: $fontSizeNormal + rem;
+    font-weight: $bold;
 }
 
 p{
@@ -37,21 +54,71 @@ a{
     color: $blueLighter;
     text-decoration: none;
     outline: 0;
+    transition: $mainTrans;
     &:hover{
         color: $white;
         text-decoration: none;
     }
     &:focus{
-        outline: .1rem solid $blueLighter;
+        outline-offset: -2px;
+        outline: 0.51rem auto $orange;
     }
 }
 
+input{
+    @include fontSize($fontSizeNormal);
+    @include size(100%);
+	padding: 1rem;
+	color: $white;
+	background-color: $transparent;
+	border: $mainBorder;
+	border-top: 0;
+	border-right: 0;
+	border-radius: 0 0 0 0.5rem;
+	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: $blueLight;
+		opacity: 1; /* Firefox */
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color:$blueLight;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		color: $blueLight;
+	}
+    &:focus{
+        outline-offset: -2px;
+        outline: 0.51rem auto $orange;
+    }
+}
+
+// Change Autocomplete styles in Chrome
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: $mainBorder;
+	border-top: 0;
+	border-right: 0;
+	border-radius: 0 0 0 0.5rem;
+    -webkit-text-fill-color: $white;
+    -webkit-box-shadow: 0;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+// Main classes
 .app_container{
     @include flexCol(stretch, stretch);
     min-height: 100vh;
 }
 
 .main_container{
-	@include containerFullSpacer();
+    @include containerLateralSpacer();
+    padding-top: 4rem;
+    padding-bottom: 4rem;
     flex: 1 0 auto;
 }

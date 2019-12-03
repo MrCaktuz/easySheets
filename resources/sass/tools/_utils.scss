@@ -6,14 +6,14 @@
 */
 
 @mixin fontSize(
-    $sizeValue: 1.6,
+    $sizeValue: $fontSizeNormal,
 ) {
     font-size: ($sizeValue * 10) + px;
     font-size: $sizeValue + rem;
 }
 
 @mixin text(
-    $fontSize: 1.6,
+    $fontSize: $fontSizeNormal,
     $fontWeight: normal,
     $color: $white,
     $transform: "",
@@ -80,12 +80,15 @@
 
 @mixin buttonStyle(
     $color: $blueDarker,
-    $borderColor: $blueLighter,
-    $backgroundColor: $blueLighter,
+    $borderColor: $orange,
+    $backgroundColor: $orange,
     $colorHover: $blueDarker,
     $borderColorHover: $white,
     $backgroundColorHover: $white,
 ) {
+    @include fontSize($fontSizeNormal);
+    @include size(auto);
+    font-family: $stackOpenSans;
     padding: 0.5rem 1rem;
     color: $color;
     border: 0.1rem;
@@ -94,6 +97,8 @@
     border-radius: 0.5rem;
     background-color: $backgroundColor;
     transition: $mainTrans;
+    line-height: 1.3;
+    cursor: pointer;
     &:hover{
         color: $colorHover;
         border-color: $borderColorHover;
@@ -130,4 +135,9 @@
     box-shadow: $mainShadow;
     transition: $mainTrans;
     @include beforeDropdown($backgroundColor);
+}
+
+@mixin box () {
+    border-radius: 0.5rem;
+    padding: 2rem;
 }

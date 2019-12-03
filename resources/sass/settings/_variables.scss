@@ -25,7 +25,8 @@ $whiteTrans: rgba($white, 0.9);
 $bodyGradient: linear-gradient(to top, $blueDarker, #142738, #1d374b, #27475f, $blueMedium);
 
 // Borders
-$mainBorder: solid 0.1rem $blueDark;
+$mainBorder: solid 0.1rem $blueLighter;
+$checkmarkBorder: solid 0.2rem $blueLighter;
 
 // Shadows
 $mainShadow: 0.1rem 0.2rem 0.5rem 0rem rgba($black, 0.2);
@@ -38,3 +39,9 @@ $stackOpenSans: 'Open Sans', sans-serif;
 $stackVollkorn: 'Vollkorn', serif;
 $bold: 600;
 $regular: 400;
+$fontSizeBigger: 3.2;
+$fontSizeBig: 2.4;
+$fontSizeMedium: 2;
+$fontSizeNormal: 1.6;
+$fontSizeSmall: 1.4;
+$fontSizeTiny: 1.2;

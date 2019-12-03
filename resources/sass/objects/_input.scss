@@ -1,0 +1,77 @@
+/*
+ *	Description:    stylesheet for object input
+ *	File:    		_input.scss
+ *	Version:        1.0 - 02/12/2019
+ *	Author :        Mucht
+*/
+
+.input{
+	&_wrap{
+		@include flexCol(flex-start, flex-start);
+		@include size(100%, auto);
+		margin-bottom: 2rem;
+	}
+	&_label{
+		@include flexRow(flex-start, center);
+		@include size(100%, auto);
+		position: relative;
+		margin-bottom: 1rem;
+		cursor: pointer;
+		&-checkbox{
+			width: auto;
+			margin-bottom: 0;
+			&:hover .input_checkbox_checkmark{
+				background-color: $blueMedium;
+			}
+			& input:checked ~ .input_checkbox_checkmark{
+				background-color: $blueMedium;
+				&::after{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&_error{
+		@include size(100%);
+		@include fontSize($fontSizeSmall);
+		color: $red;
+		margin-top: 0.5rem;
+	}
+	&_checkbox{
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+		&_checkmark{
+			@include size(2rem);
+			position: relative;
+			display: block;
+			border: $checkmarkBorder;
+			border-radius: 0.5rem;
+			margin-right: 1rem;
+			transition: $mainTrans;
+			&::after{
+				content: "";
+				position: absolute;
+				opacity: 0;
+				left: 0.7rem;
+				top: -0.7rem;
+				width: 1rem;
+				height: 2rem;
+				border: solid $white;
+				border-width: 0 0.3rem 0.3rem 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				transition: $mainTrans;
+			}
+		}
+	}
+	&_submit{
+		@include buttonStyle();
+	}
+	&-invalid{
+		border-color: $red;
+	}
+}
