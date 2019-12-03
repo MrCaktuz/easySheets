@@ -1,11 +1,11 @@
 /*
- *	Description:    stylesheet for layouts Toolbar
- *	File:    		_toolbar.scss
- *	Version:        1.0 - 23/11/2019
+ *	Description:    stylesheet for layouts auth
+ *	File:    		_auth.scss
+ *	Version:        1.0 - 02/12/2019
  *	Author :        Mucht
 */
 
-.login{
+.auth{
 	&_container{
 		@include flexCol(flex-start, center);
 	}

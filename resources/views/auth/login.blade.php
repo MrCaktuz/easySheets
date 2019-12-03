@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="login_container">
+<div class="auth_container">
     <h1>{{ __('auth.login') }}</h1>
-    <form class="login_form" method="POST" action="{{ route('login') }}">
+    <form class="auth_form" method="POST" action="{{ route('login') }}">
         @csrf
 
         <div class="input_wrap">
             <label class="input_label" for="email">{{ __('auth.email') }}</label>
-            <input id="email" class="input @error('email') input-invalid @enderror" placeholder="example@gmail.com" value="{{ old('email') }}" type="email" name="email" autofocus>
+            <input id="email" class="input @error('email') input-invalid @enderror" placeholder="example@gmail.com" value="{{ old('email') }}" type="email" name="email" autocomplete="email" autofocus>
             @error('email')
                 <p class="input_error" role="alert">{{ $message }}</p>
             @enderror
@@ -30,11 +30,11 @@
             </label>
         </div>
         @if (Route::has('password.request'))
-            <a class="login_forgotPassword" href="{{ route('password.request') }}">
+            <a class="auth_forgotPassword" href="{{ route('password.request') }}">
                 {{ __('auth.forgotPassword') }}
             </a>
         @endif
-        <div class="login_action_container">
+        <div class="auth_action_container">
             <button type="submit" class="input_submit">
                 {{ __('auth.login') }}
             </button>

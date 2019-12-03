@@ -13,14 +13,16 @@ return [
     |
     */
 
-    'login' => "Connexion",
-    'register' => "Inscription",
-    'logout' => "Déconnexion",
-    'email' => "E-mail",
-    'password' => "Mot de passe",
-    'remember' => "Rester connecté",
+    'login' => 'Connexion',
+    'register' => 'Inscription',
+    'logout' => 'Déconnexion',
+    'email' => 'E-mail',
+    'name' => 'Nom',
+    'password' => 'Mot de passe',
+    'confirmPassword' => 'Confirmation du mot de passe',
+    'remember' => 'Rester connecté',
     'forgotPassword' => 'Mot de passe oublié ?',
     'failed' => 'Ces identifiants ne correspondent pas.',
-    'throttle' => "Trop de tentative de connection. Réessayez dans :seconds secondes.",
+    'throttle' => 'Trop de tentative de connection. Réessayez dans :seconds secondes.',
 
 ];
