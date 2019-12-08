@@ -37,6 +37,11 @@
 		color: $red;
 		margin-top: 0.5rem;
 	}
+	&_success{
+		color: $green;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
 	&_checkbox{
 		position: absolute;
 		opacity: 0;

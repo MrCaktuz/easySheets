@@ -13,10 +13,16 @@ return [
     |
     */
 
+    'resetTitle' => 'Reset your password',
+    'send' => 'Send',
+    'validate' => 'Validate',
     'reset' => 'Your password has been reset!',
+    'newPassword' => 'New password',
+    'newConfirmPassword' => 'New password confirmation',
     'sent' => 'We have e-mailed your password reset link!',
     'token' => 'This password reset token is invalid.',
     'user' => "We can't find a user with that e-mail address.",
     'throttled' => 'Please wait before retrying.',
+    'confirm' => 'Please confirm your password before continuing.',
 
 ];

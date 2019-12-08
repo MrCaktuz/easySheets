@@ -29,11 +29,13 @@
                 {{ __('auth.remember') }}
             </label>
         </div>
+
         @if (Route::has('password.request'))
             <a class="auth_forgotPassword" href="{{ route('password.request') }}">
                 {{ __('auth.forgotPassword') }}
             </a>
         @endif
+        
         <div class="auth_action_container">
             <button type="submit" class="input_submit">
                 {{ __('auth.login') }}
