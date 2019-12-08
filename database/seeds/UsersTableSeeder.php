@@ -28,6 +28,7 @@ class UsersTableSeeder extends Seeder
             'avatar' => 'https://api.adorable.io/avatars/50/Mucht.png',
             'remember_token' => null,
             'created_at' => '2019-11-11 00:00:00',
+            'email_verified_at' => '2019-11-11 00:00:00',
             'updated_at' => '2019-11-11 00:00:00',
         ]);
         // Add user Fredus
@@ -39,6 +40,7 @@ class UsersTableSeeder extends Seeder
             'avatar' => 'https://api.adorable.io/avatars/50/Fredus.png',
             'remember_token' => null,
             'created_at' => '2019-11-11 00:00:00',
+            'email_verified_at' => '2019-11-11 00:00:00',
             'updated_at' => '2019-11-11 00:00:00',
         ]);
     }
