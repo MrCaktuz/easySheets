@@ -13,11 +13,11 @@
 
 Route::get('/', function () {
     if (Auth::user()) {
-        return redirect('/home');
+        return redirect('/dashboard');
     }
     return view('welcome');
 })->name('welcome');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
