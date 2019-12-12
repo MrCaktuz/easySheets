@@ -1,0 +1,24 @@
+/*
+ *	Description:    stylesheet for component box
+ *	File:    		_box.scss
+ *	Version:        1.0 - 12/12/2019
+ *	Author :        Mucht
+*/
+
+.box{
+    @include flexCol(flex-start, flex-start);
+    border: $blueLightBorder;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: $mainShadow;
+    margin-bottom: 2rem;
+    &_title{
+        @include size(100%, auto);
+        padding: 1rem 2rem;
+        background-color: $blueLight;
+	}
+	&_content{
+        @include size(100%, auto);
+        padding: 1rem 2rem;
+	}
+}

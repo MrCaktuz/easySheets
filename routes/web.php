@@ -21,3 +21,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('verified');
+
+Route::get('/user/{user}', 'UserController@show')->middleware('verified')->name('profile');
+Route::post('/user/{user}', 'UserController@update')->middleware('verified')->name('profileUpdate');
+Route::get('/user/{user}/edit', 'UserController@edit')->middleware('verified')->name('profileEdit');

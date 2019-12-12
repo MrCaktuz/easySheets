@@ -21,6 +21,7 @@ return [
     'password' => 'Password',
     'confirmPassword' => 'Confirm password',
     'remember' => 'Remember me',
+    'myProfile' => 'My profile',
     'verifyTitle' => 'Verify Your Email Address',
     'verifySentSuccess' => 'A fresh verification link has been sent to your email address.',
     'verifyMessage' => 'Before proceeding, please check your email for a verification link.',

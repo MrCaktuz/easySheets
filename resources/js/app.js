@@ -20,6 +20,19 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('box-component', {
+    props: ['title'],
+    template: `
+        <div class="box">
+            <div class="box_title">
+                {{title}}
+            </div>
+            <div class="box_content">
+                <slot></slot>
+            </div>
+        </div>
+    `,
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -9,8 +9,17 @@
 	@include containerFullSpacer();
 	@include fontSize($fontSizeTiny);
 	background-color: $blueDarker;
-	&-wrap {
+	&_wrap {
 		@include flexRow(center, center);
 		flex: 0 0 auto;
+	}
+	&_copy {
+		margin-bottom: 0;
+		text-align: center;
+	}
+	&_signature {
+		&_link {
+			@include fontSize($fontSizeTiny);
+		}
 	}
 }

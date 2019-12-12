@@ -23,13 +23,16 @@
 @import "base/root";
 
 // 6. Layouts - Design des layouts
-@import "layouts/toolbar";
-@import "layouts/footer";
 @import "layouts/auth";
+@import "layouts/footer";
+@import "layouts/page";
+@import "layouts/profile";
+@import "layouts/toolbar";
 
 // 7. Components - Design des composants
-// @import "components/example";
+@import "components/box";
 
 // 8. Objects - Éléments de design
-@import "objects/svg_logo";
+@import "objects/avatar";
 @import "objects/input";
+@import "objects/svg_logo";

@@ -23,6 +23,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        // ******** Meta title ********
+        $metaTitle = 'Dashboard';
+
+        return view('dashboard', compact('metaTitle'));
     }
 }

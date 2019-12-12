@@ -21,18 +21,24 @@
                 <div class="toolbar_dropdown-container">
                     <div class="toolbar_dropdown-toggle" role="button">
                         <div class="toolbar_dropdown-toggle-name">{{ Auth::user()->name }}</div>
-                        <div class="toolbar_avatar_container">
+                        <div class="avatar avatar-small avatar-border">
                             <img src="{{Auth::user()->avatar}}" alt="Avatar Image" class="avatar_img">
                         </div>
                     </div>
 
                     <div class="toolbar_dropdown-content">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
+                        <!-- Profile button -->
+                        <a class="toolbar_dropdown-item" href="{{ route('profile', ['user' => Auth::user()]) }}">
+                            {{ __('profile.showTitle') }}
+                        </a>
+                        <!-- Dashboard button -->
+                        <a class="toolbar_dropdown-item" href="{{ route('dashboard') }}">
+                            {{ __('profile.dashboard') }}
+                        </a>
+                        <!-- Logout button -->
+                        <a class="toolbar_dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('auth.logout') }}
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>

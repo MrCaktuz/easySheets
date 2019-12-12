@@ -1,0 +1,32 @@
+/*
+ *	Description:    stylesheet for object avatar
+ *	File:    		_avatar.scss
+ *	Version:        1.0 - 10/12/2019
+ *	Author :        Mucht
+*/
+
+.avatar{
+	@include flexRow(center, center);
+	flex: 0 0 auto;
+	border-radius: 50%;
+	background-color: $blueMedium;
+	overflow: hidden;
+	&-small {
+		@include size(5rem);
+	}
+	&-big {
+		@include size(100%);
+		// @media screen and ($mq_640_up){
+		// 	@include size(20rem);
+		// }
+	}
+	&-border {
+		border: $mainBorder;
+	}
+	&-shadow {
+		box-shadow: $mainShadow;
+	}
+	&_img{
+		@include size(100%);
+	}
+}

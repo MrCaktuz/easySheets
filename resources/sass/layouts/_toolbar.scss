@@ -16,6 +16,7 @@
 		flex: 1 0 auto;
 	}
 	&_action_container{
+		@include flexRow(flex-end, center);
 		flex: 0 0 auto;
 	}
 	&_icon{
@@ -25,12 +26,16 @@
 	}
 	&_button{
 		@include buttonStyle();
+		margin-right: 1rem;
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 	&_dropdown{
 		&-container{
 			position: relative;
 			&:hover .toolbar_dropdown-content{
-				display: block;
+				display: flex;
 			}
 		}
 		&-toggle{
@@ -44,19 +49,8 @@
 		&-content{
 			@include dropdown();
 		}
-	}
-	&_avatar{
-		&_container{
-			@include size(5rem);
-			@include flexRow(center, center);
-			flex: 0 0 auto;
-			border: 0.1rem solid $blueLighter;
-			border-radius: 50%;
-			background-color: $blueMedium;
-			overflow: hidden;
-		}
-		&_img{
-			@include size(100%);
+		&-item{
+			@include dropdownItem();
 		}
 	}
 }

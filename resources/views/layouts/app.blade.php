@@ -4,7 +4,7 @@
     <body>
         <div id="app" class="app_container">
             @include('layouts.toolbar')
-            <main class="main_container">
+            <main class="page_container">
                 @yield('content')
             </main>
             @include ( 'layouts.footer' )

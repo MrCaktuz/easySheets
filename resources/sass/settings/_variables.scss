@@ -26,6 +26,8 @@ $bodyGradient: linear-gradient(to top, $blueDarker, #142738, #1d374b, #27475f, $
 
 // Borders
 $mainBorder: solid 0.1rem $blueLighter;
+$blueMediumBorder: solid 0.1rem $blueMedium;
+$blueLightBorder: solid 0.1rem $blueLight;
 $checkmarkBorder: solid 0.2rem $blueLighter;
 
 // Shadows
@@ -45,3 +47,14 @@ $fontSizeMedium: 2;
 $fontSizeNormal: 1.6;
 $fontSizeSmall: 1.4;
 $fontSizeTiny: 1.2;
+
+// Media Breakpoints
+$mq_480_up: 'min-width: 30em'; // 480/16
+$mq_512_up: 'min-width: 32em'; // 480/16
+$mq_640_up: 'min-width: 40em'; // 640/16
+$mq_800_up: 'min-width: 50em'; // 800/16
+$mq_960_up: 'min-width: 60em'; // 960/16
+$mq_1120_up: 'min-width: 70em'; // 1120/16
+$mq_1280_up: 'min-width: 80em'; // 1280/16
+$mq_1440_up: 'min-width: 90em'; // 1280/16
+$mq_1920_up: 'min-width: 120em'; // 1280/16

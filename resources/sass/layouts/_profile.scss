@@ -1,0 +1,38 @@
+/*
+ *	Description:    stylesheet for layouts profile
+ *	File:    		_profile.scss
+ *	Version:        1.0 - 10/12/2019
+ *	Author :        Mucht
+*/
+
+.profile {
+    &_content {
+        @include flexCol(flex-start, center);
+        @media screen and ($mq_512_up){
+            display: block;
+            @include flexRow(center, flex-start);
+		}
+    }
+    &_avatar {
+        @include size (15rem);
+        &_container {
+            @include flexCol(flex-start, center);
+            flex: 0 0 auto;
+            margin-bottom: 2rem;
+        }
+    }
+    &_info {
+        width: 100%;
+        min-width: 27rem;
+        max-width: 40rem;
+        @media screen and ($mq_512_up){
+            margin-left: 2rem;
+		}
+    }
+    &_link {
+        @include buttonStyle();
+        &-edit {
+            margin-top: 2rem;
+        }
+    }
+}

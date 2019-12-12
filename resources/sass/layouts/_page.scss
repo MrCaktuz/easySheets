@@ -1,0 +1,18 @@
+/*
+ *	Description:    stylesheet for layouts page
+ *	File:    		_page.scss
+ *	Version:        1.0 - 10/12/2019
+ *	Author :        Mucht
+*/
+
+.page {
+    &_container {
+        @include containerLateralSpacer();
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        flex: 1 0 auto;
+    }
+	&_title {
+        text-align: center;
+	}
+}

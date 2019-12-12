@@ -15,8 +15,14 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'EasySheets') }}</title>
+    
+    <title>
+        @if ($metaTitle ?? '')
+            {{ $metaTitle . ' - ' . config('app.name', 'EasySheets') }}
+        @else
+            {{ config('app.name', 'EasySheets') }}
+        @endif
+    </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
